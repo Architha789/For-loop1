@@ -33,18 +33,30 @@ document.getElementById("p2").innerHTML=table;
 
 function my_function4(){
     p=parseInt(document.getElementById('num3').value);
-    let prime=p;
-    for(q=1;q<=100;q++){
-        if(p <=1 && p%q == 0 ){
-            prime ="The number is not a prime number"   ;
-        }
-        else{
-            prime = "The number is a prime number"   ;
-        }
-    }
-     document.getElementById("p3").innerHTML=prime;
-    }
+    if(isprime(p)){
+        result="It is a prime number";
 
+    }
+    else{
+        result="Not a prime number";
+    }
+    document.getElementById("p3").innerHTML=result;
+}
+function isprime(p){
+    if(p<1){
+        return false;
+    }
+        for(w=2;w<p;w++){
+            if(p%w == 0){
+                return false;
+            }
+         } 
+         return true;
+        
+    }
+    
+
+    
 function my_function5(){
     b=parseInt(document.getElementById('num4').value);
    let evensum=0
